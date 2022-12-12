@@ -5,7 +5,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Execute01 {
+/*
+     Veritabanımız ile bağlantı oluşturacağız.
+     JDBC Driver’imizi yükleyeceğiz.
+     Statement/PreparedStatement sorgularımızı oluşturacağız.
+     Resultset oluşturacağız
+     Ve son olarak oluşturduğumuz bağlantıyı/statementi/resulset’i kapatacağız.
 
+ */
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         //1. Adım: Driver'a kaydol
         Class.forName("org.postgresql.Driver");
@@ -29,7 +36,7 @@ public class Execute01 {
      2) Eğer execute() methodu DQL için kullanılırsa ResultSet alındığında 'true' aksi hale 'false' verir.
      */
 
-        //2.Örnek: Table'a worker_address sütunu ekleyerek alter yapın.
+      //2.Örnek: Table'a worker_address sütunu ekleyerek alter yapın.
 
         String sql2 = "ALTER TABLE workers ADD worker_address VARCHAR(80)";
        boolean sql2b = st.execute(sql2);

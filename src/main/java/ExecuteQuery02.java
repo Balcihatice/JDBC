@@ -12,7 +12,7 @@ public class ExecuteQuery02 {
         Statement st = con.createStatement();
 
         //1. Örnek: companies tablosundan en yüksek ikinci number_of_employees değeri olan company ve number_of_employees değerlerini çağırın.
-
+        // offset ve fetch next kullandik
         String sql = "select company,number_of_employees \n" +
                 "from companies\n" +
                 "order by number_of_employees desc \n" +

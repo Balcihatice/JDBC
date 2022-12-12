@@ -14,7 +14,7 @@ public class ExecuteQuery01 {
         //1. Örnek:  region id'si 1 olan "country name" değerlerini çağırın.
 
         String sql1 = "SELECT country_name FROM countries WHERE region_id=1";
-        boolean r1 = st.execute(sql1);
+        boolean r1 = st.execute(sql1); //execute() methodu bize herzaman boolean verir.bize data vermiyor.datayi almak icin executeQuery() methodu kullanacagiz
         System.out.println("r1 =" + r1);
 
         //Recordlari(satir=row) gormek icin ExecuteQuery() methodunu kullanmaliyiz.
@@ -42,6 +42,6 @@ public class ExecuteQuery01 {
             System.out.println(resultSet3.getInt(1)+"_"+resultSet3.getString(2)+"_"+resultSet3.getInt(3));
         }
          con.close();
-        st.close();
+         st.close();
     }
 }

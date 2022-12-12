@@ -8,6 +8,17 @@ import java.sql.Statement;
 import static java.sql.DriverManager.getConnection;
 
 public class ExecuteUpdate01 {
+    /*1) Doğrudan veri çekme(SELECT) veya veri listeme işlemi için executeQuery metodu kullanılabilir.(statement.executeQuery("sql-komutları");
+      2)Veri ekleme, veri güncelleme ve veri silme işlemi sonrası eklenen, güncellenen veya
+      silinen kayıt sayısı bilgisi için executeUpdate metodu kullanılabilir.(statement.executeUpdate("sql-komutları");
+      3)Birden fazla-toplu işlem yapmak için executeBatch metodu kullanılır.(statement.executeBatch();
+      4)Metodu kullanabilmek için komutların addBatch metodu ile eklenmesi gerekir.
+      statement.addBatch("komut-1");
+      statement.addBatch("komut-2");
+      statement.addBatch("komut-3");
+       statement.executeBatch();
+    */
+
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         Class.forName("org.postgresql.Driver");
@@ -23,7 +34,7 @@ public class ExecuteUpdate01 {
 
         int updateEdilenSatirSayisi = st.executeUpdate(sql1);//kac satir degistirildi bilgi verdi
         System.out.println("updateEdilenSatirSayisi = " + updateEdilenSatirSayisi);
-       ResultSet resultSet1 = st.executeQuery("SELECT * FROM companies");
+       ResultSet resultSet1 = st.executeQuery("SELECT * FROM companies");//yukarida update edildi, burada cagirip goruntuledik
        while (resultSet1.next()) {
            System.out.println(resultSet1.getInt(1)+"--"+resultSet1.getString(2)+"--"+resultSet1.getInt(3));
        }
